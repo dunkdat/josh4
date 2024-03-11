@@ -1,0 +1,59 @@
+.container {
+    display: grid;
+    gap: 10px;
+    justify-content: center;
+}
+img{
+ width: 200px;
+ height: 200px;
+}
+figure {
+    margin: 0;
+}
+
+figcaption {
+    text-align: center;
+}
+
+/* Tablet view */
+@media screen and (min-width: 772px) {
+    .container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+
+    figure:last-child {
+        grid-column: span 2;
+    }
+}
+
+/* Large screen view */
+@media screen and (min-width: 992px) {
+    .container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    figure:nth-child(3n) {
+        grid-column: span 2;
+    }
+
+    figure {
+        border-radius: 0;
+    }
+}
+
+/* prefers-reduced-motion media query */
+@media (prefers-reduced-motion: reduce) {
+    body {
+        scroll-behavior: auto;
+    }
+}
+
+/* Dark color scheme */
+@media (prefers-color-scheme: dark) {
+    figure {
+        background-color: #333;
+        color: #ff0; /* Lighter color */
+        border-color: #000;
+    }
+}
